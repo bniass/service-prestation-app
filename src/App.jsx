@@ -11,16 +11,19 @@ import { Layout } from './components/Layout'
 function App() {
 
   return (
-    <Router>
+     <Router>
       <Routes>
-          <Route path="/" element={<Navigate to="/login" />} />
-          <Route path="/login" element={<LoginForm />} />
+        {/* Redirection de la route / vers /login */}
+        <Route path="/" element={<Navigate to="/login" />} />
 
+        {/* Route pour le login sans Layout */}
+        <Route path="/login" element={<LoginForm />} />
+          {/* Routes pour le Layout (avec Sidebar, Header, etc.) */}
           <Route path="/" element={<Layout />}>
             <Route path="/createcompte" element={<FormCreateCompte />} />
             <Route path="/servicelist" element={<ServiceList />} />
+            {/* Autres routes */}
           </Route>
-
       </Routes>
     </Router>
   )
