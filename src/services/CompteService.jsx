@@ -1,11 +1,10 @@
-import axios from 'axios'
-import { API_URL } from './API_URL'
+import apiClient from './apiClient';
 
 export const creerCompte = async (data) => {
     console.log(data)
     
     try {
-      const response = await axios.post(`${API_URL.url}/api/compte`,  data , {
+      const response = await apiClient.post('/api/compte',  data , {
         headers: {
           'Content-Type': 'application/json',
         },
